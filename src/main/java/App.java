@@ -1,3 +1,4 @@
+import entities.CrewProfile;
 import entities.SpaceshipDescription;
 import io.dummymaker.export.IExporter;
 import io.dummymaker.export.impl.JsonExporter;
@@ -9,15 +10,16 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
 
+//        IProduceFactory factory = new GenProduceFactory();
+//        List<SpaceshipDescription> spaceshipDescriptions = factory.produce(SpaceshipDescription.class, 2000000);
+//        IExporter exporter = new JsonExporter().withPretty();
+//        exporter.export(spaceshipDescriptions);
+
+
         IProduceFactory factory = new GenProduceFactory();
-        List<SpaceshipDescription> crewProfiles = factory.produce(SpaceshipDescription.class, 2000000);
+        List<CrewProfile> crewProfiles = factory.produce(CrewProfile.class, 2000000);
         IExporter exporter = new JsonExporter().withPretty();
         exporter.export(crewProfiles);
-
-//        IProduceFactory factory = new GenProduceFactory();
-//        List<CrewProfile> crewProfiles = factory.produce(CrewProfile.class, 2000000);
-//        IExporter exporter = new JsonExporter().withPretty();
-//        exporter.export(crewProfiles);
 
     }
 }
