@@ -9,13 +9,9 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-
-
-
         IProduceFactory factory = new GenProduceFactory();
         List<CrewProfile> crewProfiles = factory.produce(CrewProfile.class, 2000000);
         IExporter exporter = new JsonExporter().withPretty();
         exporter.export(crewProfiles);
-
     }
 }
